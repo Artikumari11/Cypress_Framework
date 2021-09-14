@@ -1,0 +1,15 @@
+{
+  "name": "signavio-code-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arti",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^4.8.0",
+    "cypress-iframe": "^1.0.1"
+  }
+}
