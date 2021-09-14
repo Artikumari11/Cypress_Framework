@@ -23,7 +23,8 @@ describe('automation practice features testing', function(){
     })
    it('shopping the product',()=>{
        cy.get("ul li:last-of-type a[title='T-shirts']").click()
-       cy.get("div:last-of-type img[title='Faded Short Sleeve T-shirts']").should('be.visible').click()
+      cy.get("div:last-of-type img[title='Faded Short Sleeve T-shirts']").should('be.visible').click()
+       //cy.get("iframe[id*='App']").its('0.contentDocument.body').find("a[class*='add_to_cart'] span").click()
        //cy.get("a[class*='add_to_cart'] span").click()
        //cy.get("a[class*=button-medium'] span").click()
        
@@ -35,12 +36,14 @@ describe('automation practice features testing', function(){
         cy.get("iframe[id*=App]").then(function ($element) 
         { const $body = $element.contents().find('body') 
         const cyElement = cy.wrap($body) 
-        cyElement.find("a[class*=button-medium'] span").click({force:true})
+        cyElement.find("a[class*='button-medium'] span").click({force:true})
 
     })*/
        
-        //it('fetches post using iframes plugin', () => {
-            //cy.visit('http://automationpractice.com/index.php?id_product=1&controller=product')
+        it('fetches post using iframes plugin', () => {
+            //cy.visit('http://automationpractice.com/index.php?id_category=5&controller=category')
+            //cy.get("a[class*=button-medium'] span'").click()
+            cy.frameLoaded('iframe.aut-iframe').its('0.contentDocument.body').find("a[class*='add_to_cart'] span").click()
           //cy.frameLoaded("iframe[id*='App']")
           // after the frame has loaded, we can use "cy.iframe()"
           // to retrieve it
@@ -48,7 +51,7 @@ describe('automation practice features testing', function(){
          // cy.iframe().find('#result').should('include.text', '"delectus aut autem"')
 
 
-        //}
+        })
       //})
 
 
