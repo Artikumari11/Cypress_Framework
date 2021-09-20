@@ -1,9 +1,18 @@
 {
+
+    "baseUrl": "http://automationpractice.com/",
+
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "reportFilename": "report",
+    "overwrite": false,
+    "html": true,
+    "json": true,
+    "charts": true,
     "include": [
       "./node_modules/cypress",
       "cypress/**/*.js"
-    ],
-    
-  
-    "chromeWebSecurity": false
+    ]
+  }
   }
